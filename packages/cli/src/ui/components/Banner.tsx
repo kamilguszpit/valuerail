@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Text } from 'ink';
+import ErrorBoundary from './ErrorBoundary.js';
 import Gradient from 'ink-gradient';
 import BigText from 'ink-big-text';
 import fs from 'fs';
@@ -31,9 +32,11 @@ export default function Banner() {
 
     return (
         <Box flexDirection="column" marginBottom={1}>
-            <Gradient name="morning">
-                <BigText text="VALUERAIL" font="simple" />
-            </Gradient>
+            <ErrorBoundary fallback={<Text>VALUERAIL</Text>}>
+                <Gradient name="morning">
+                    <BigText text="VALUERAIL" font="simple" />
+                </Gradient>
+            </ErrorBoundary>
             {/* <Text>VALUERAIL (Text fallback)</Text> */}
 
             <Box flexDirection="column" marginLeft={1}>
