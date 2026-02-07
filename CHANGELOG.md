@@ -1,3 +1,9 @@
+## [1.2.0-beta.1](https://github.com/kamilguszpit/valuerail/compare/v1.1.1-beta.1...v1.2.0-beta.1) (2026-02-07)
+
+### Features
+
+* Implement CLI `init` command, refactor project creation logic into reusable functions, and update config file detection to `vrail.json`. ([db052f8](https://github.com/kamilguszpit/valuerail/commit/db052f8d671a19ffd0cb8caa1be57af19ef094a4))
+
 ## [1.1.1-beta.1](https://github.com/kamilguszpit/valuerail/compare/v1.1.0...v1.1.1-beta.1) (2026-02-07)
 
 ### Bug Fixes
