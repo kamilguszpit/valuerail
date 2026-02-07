@@ -20,13 +20,21 @@ const getCliVersion = () => {
 
 export default function Banner() {
     const isVrailProject = hasVrailConfig();
-    const [version, setVersion] = useState(getCliVersion());
+    const [version, setVersion] = useState('v0.0.1');
+
+    useEffect(() => {
+        // @ts-ignore
+        const v = process.env.CLI_VERSION || 'v0.0.1';
+        setVersion(v);
+        // console.log('Banner mounted, version:', v);
+    }, []);
 
     return (
         <Box flexDirection="column" marginBottom={1}>
             <Gradient name="morning">
                 <BigText text="VALUERAIL" font="simple" />
             </Gradient>
+            {/* <Text>VALUERAIL (Text fallback)</Text> */}
 
             <Box flexDirection="column" marginLeft={1}>
                 <Box flexDirection="row" gap={2}>

@@ -15,7 +15,7 @@
         "fonts"
     ],
     "scripts": {
-        "dev": "bun --watch run src/index.tsx",
+        "dev": "CLI_VERSION=$(bun -e 'console.log(require(\"./package.json\").version)') bun --watch run src/index.tsx",
         "build": "bun build ./src/index.tsx --compile --outfile dist/vrail",
         "build:npm": "bun build ./src/index.tsx --target=node --format=esm --outfile dist/index.js --define:process.env.CLI_VERSION=\"\\\"$(jq -r .version package.json)\\\"\"",
         "postbuild:npm": "cp -r ../../node_modules/cfonts/fonts ./fonts",
