@@ -1,3 +1,9 @@
+## [1.0.0-beta.10](https://github.com/kamilguszpit/valuerail/compare/v1.0.0-beta.9...v1.0.0-beta.10) (2026-02-07)
+
+### Bug Fixes
+
+* remove extra quotes from CLI version string display ([264f8c7](https://github.com/kamilguszpit/valuerail/commit/264f8c773b264f9be49ccf0f29402f5d8207d772))
+
 ## [1.0.0-beta.9](https://github.com/kamilguszpit/valuerail/compare/v1.0.0-beta.8...v1.0.0-beta.9) (2026-02-07)
 
 ### Bug Fixes
