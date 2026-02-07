@@ -1,3 +1,10 @@
+# [1.0.0-beta.5](https://github.com/kamilguszpit/valuerail/compare/v1.0.0-beta.4...v1.0.0-beta.5) (2026-02-07)
+
+
+### Bug Fixes
+
+* **ui:** restore console.clear and fix dev version display ([44ed920](https://github.com/kamilguszpit/valuerail/commit/44ed9203381a3f67434a9c85f5d356a0634f4a6c))
+
 # [1.0.0-beta.4](https://github.com/kamilguszpit/valuerail/compare/v1.0.0-beta.3...v1.0.0-beta.4) (2026-02-07)
 
 
