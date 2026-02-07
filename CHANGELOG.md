@@ -1,3 +1,10 @@
+# [1.0.0-beta.6](https://github.com/kamilguszpit/valuerail/compare/v1.0.0-beta.5...v1.0.0-beta.6) (2026-02-07)
+
+
+### Features
+
+* Introduce new `cfonts` font styles, implement an `ErrorBoundary` for the CLI banner, and refine the font build process. ([beff7ae](https://github.com/kamilguszpit/valuerail/commit/beff7aefc5f9272491bccd2527cc44e84c066ae5))
+
 # [1.0.0-beta.5](https://github.com/kamilguszpit/valuerail/compare/v1.0.0-beta.4...v1.0.0-beta.5) (2026-02-07)
 
 
