@@ -31,10 +31,15 @@ module.exports = {
         ],
         "@semantic-release/changelog",
         [
+            "@semantic-release/exec",
+            {
+                "prepareCmd": "cd packages/cli && VERSION=${nextRelease.version} && bun build ./src/index.tsx --target=node --format=esm --outfile dist/index.js --define \"process.env.CLI_VERSION='\\\"${nextRelease.version}\\\"'\" && rm -rf fonts && cp -r ../../node_modules/cfonts/fonts ./fonts"
+            }
+        ],
+        [
             "@semantic-release/npm",
             {
-                "pkgRoot": "packages/cli",
-                "prepareCmd": "cd packages/cli && npm run build:npm"
+                "pkgRoot": "packages/cli"
             }
         ],
         "@semantic-release/github",
