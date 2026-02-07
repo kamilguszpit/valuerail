@@ -1,3 +1,9 @@
+## [1.1.0-beta.2](https://github.com/kamilguszpit/valuerail/compare/v1.1.0-beta.1...v1.1.0-beta.2) (2026-02-07)
+
+### Bug Fixes
+
+* **cli:** include templates in npm package and apply gradient to logo ([e338cf2](https://github.com/kamilguszpit/valuerail/commit/e338cf232f3bffee28751ad9bbb8248c22d05335))
+
 ## [1.1.0-beta.1](https://github.com/kamilguszpit/valuerail/compare/v1.0.0...v1.1.0-beta.1) (2026-02-07)
 
 ### Features
