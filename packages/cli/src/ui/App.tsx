@@ -91,7 +91,7 @@ export default function App() {
                 {currentView === 'npm' && (
                     <ExternalLink
                         label="NPM Registry"
-                        url="https://www.npmjs.com/package/valuerail"
+                        url="https://www.npmjs.com/package/@valuerail/cli"
                         onBack={goToHeader}
                     />
                 )}
