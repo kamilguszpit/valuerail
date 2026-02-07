@@ -1,3 +1,5 @@
+## [1.0.0-beta.11](https://github.com/kamilguszpit/valuerail/compare/v1.0.0-beta.10...v1.0.0-beta.11) (2026-02-07)
+
 ## [1.0.0-beta.10](https://github.com/kamilguszpit/valuerail/compare/v1.0.0-beta.9...v1.0.0-beta.10) (2026-02-07)
 
 ### Bug Fixes
