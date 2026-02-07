@@ -3,15 +3,13 @@ import { Box, Text, useInput, useApp } from 'ink';
 
 interface ExitConfirmationProps {
     onCancel: () => void;
+    onExit: () => void;
 }
 
-export default function ExitConfirmation({ onCancel }: ExitConfirmationProps) {
-    const { exit } = useApp();
-
+export default function ExitConfirmation({ onCancel, onExit }: ExitConfirmationProps) {
     useInput((input, key) => {
         if (input === 'y') {
-            exit();
-            process.exit(0);
+            onExit();
         }
         if (input === 'n' || key.escape) {
             onCancel();

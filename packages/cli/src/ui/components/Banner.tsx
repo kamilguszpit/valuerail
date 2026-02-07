@@ -19,35 +19,38 @@ const getCliVersion = () => {
     return process.env.CLI_VERSION || 'v0.0.1';
 };
 
-export default function Banner() {
+interface BannerProps {
+    hideStatus?: boolean;
+}
+
+export default function Banner({ hideStatus = false }: BannerProps) {
     const isVrailProject = hasVrailConfig();
     const [version, setVersion] = useState('v0.0.1');
 
     useEffect(() => {
-        // @ts-ignore
         const v = process.env.CLI_VERSION || 'v0.0.1';
         setVersion(v);
-        // console.log('Banner mounted, version:', v);
     }, []);
 
     return (
-        <Box flexDirection="column" marginBottom={1}>
+        <Box flexDirection="column" marginBottom={hideStatus ? 0 : 1}>
             <ErrorBoundary fallback={<Text>VALUERAIL</Text>}>
                 <Gradient name="morning">
                     <BigText text="VALUERAIL" font="simple" />
                 </Gradient>
             </ErrorBoundary>
-            {/* <Text>VALUERAIL (Text fallback)</Text> */}
 
-            <Box flexDirection="column" marginLeft={1}>
-                <Box flexDirection="row" gap={2}>
-                    <Text color="gray">Version: <Text color="#CD6052">{version}</Text></Text>
-                    <Text color="gray">
-                        Project Status: {isVrailProject ? <Text color="green">✔ Vrail Project Detected</Text> : <Text color="red">✘ Not a Vrail Project</Text>}
-                    </Text>
+            {!hideStatus && (
+                <Box flexDirection="column" marginLeft={1}>
+                    <Box flexDirection="row" gap={2}>
+                        <Text color="gray">Version: <Text color="#CD6052">{version}</Text></Text>
+                        <Text color="gray">
+                            Project Status: {isVrailProject ? <Text color="green">✔ Vrail Project Detected</Text> : <Text color="red">✘ Not a Vrail Project</Text>}
+                        </Text>
+                    </Box>
+                    <Text color="gray" dimColor>{process.cwd()}</Text>
                 </Box>
-                <Text color="gray" dimColor>{process.cwd()}</Text>
-            </Box>
+            )}
         </Box>
     );
 }
