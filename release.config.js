@@ -10,7 +10,8 @@ module.exports = {
         [
             "@semantic-release/npm",
             {
-                "pkgRoot": "packages/cli"
+                "pkgRoot": "packages/cli",
+                "prepareCmd": "cd packages/cli && npm run build:npm"
             }
         ],
         "@semantic-release/github",
