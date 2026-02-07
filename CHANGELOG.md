@@ -1,3 +1,11 @@
+## [1.0.0-beta.9](https://github.com/kamilguszpit/valuerail/compare/v1.0.0-beta.8...v1.0.0-beta.9) (2026-02-07)
+
+### Bug Fixes
+
+* use @semantic-release/exec plugin to build CLI with correct version injection ([a599e0c](https://github.com/kamilguszpit/valuerail/commit/a599e0ce8ace9a724acd904c322117b13005b1a5))
+* use find command to locate cfonts fonts in CI environment ([c55b321](https://github.com/kamilguszpit/valuerail/commit/c55b321533e1f03530a3bba95e78e6c77652263e))
+* use npm install for semantic-release compatibility ([5c4c1ab](https://github.com/kamilguszpit/valuerail/commit/5c4c1abee71649645a0442b12c083790c22d3375))
+
 ## [1.0.0-beta.8](https://github.com/kamilguszpit/valuerail/compare/v1.0.0-beta.7...v1.0.0-beta.8) (2026-02-07)
 
 ### Bug Fixes
