@@ -11,12 +11,14 @@
         "access": "public"
     },
     "files": [
-        "dist"
+        "dist",
+        "fonts"
     ],
     "scripts": {
         "dev": "bun --watch run src/index.tsx",
         "build": "bun build ./src/index.tsx --compile --outfile dist/vrail",
-        "build:npm": "bun build ./src/index.tsx --target=node --format=esm --outfile dist/index.js --external ink --external ink-big-text --external ink-gradient --external ink-select-input --external ink-spinner --external open --external react --external zod",
+        "build:npm": "bun build ./src/index.tsx --target=node --format=esm --outfile dist/index.js --define:process.env.CLI_VERSION=\"\\\"$(jq -r .version package.json)\\\"\"",
+        "postbuild:npm": "cp -r ../../node_modules/cfonts/fonts ./fonts",
         "lint": "echo 'linting...'"
     },
     "dependencies": {

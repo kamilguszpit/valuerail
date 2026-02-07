@@ -14,25 +14,13 @@ const hasVrailConfig = () => {
 };
 
 const getCliVersion = () => {
-    try {
-        const pkgPath = path.resolve(__dirname, '../../package.json');
-        if (fs.existsSync(pkgPath)) {
-            const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf8'));
-            return pkg.version;
-        }
-        return 'v0.0.1';
-    } catch (e) {
-        return 'v0.0.1';
-    }
+    // @ts-ignore
+    return process.env.CLI_VERSION || 'v0.0.1';
 };
 
 export default function Banner() {
     const isVrailProject = hasVrailConfig();
-    const [version, setVersion] = useState('...');
-
-    useEffect(() => {
-        setVersion(getCliVersion());
-    }, []);
+    const [version, setVersion] = useState(getCliVersion());
 
     return (
         <Box flexDirection="column" marginBottom={1}>
