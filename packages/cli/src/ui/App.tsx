@@ -14,9 +14,6 @@ export default function App() {
     const [currentView, setCurrentView] = useState<View>('dashboard');
     const [focusArea, setFocusArea] = useState<'header' | 'content'>('content');
 
-    useEffect(() => {
-        console.clear();
-    }, []);
 
     const goToHeader = () => setFocusArea('header');
     const goToDashboard = () => {
