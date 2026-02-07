@@ -1,3 +1,10 @@
+# [1.0.0-beta.7](https://github.com/kamilguszpit/valuerail/compare/v1.0.0-beta.6...v1.0.0-beta.7) (2026-02-07)
+
+
+### Features
+
+* Implement a `GoodbyeScreen` component shown on CLI exit, displaying version, CWD, and project status, and remove an unnecessary console clear. ([467a52c](https://github.com/kamilguszpit/valuerail/commit/467a52c8538be0db242a64605b2c1b8a15f89a88))
+
 # [1.0.0-beta.6](https://github.com/kamilguszpit/valuerail/compare/v1.0.0-beta.5...v1.0.0-beta.6) (2026-02-07)
 
 
