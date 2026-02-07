@@ -1,3 +1,11 @@
+## [1.1.0](https://github.com/kamilguszpit/valuerail/compare/v1.0.0...v1.1.0) (2026-02-07)
+
+### Features
+
+* **cli:** Add Next.js project template for `vrail init` command ([21274f7](https://github.com/kamilguszpit/valuerail/commit/21274f7a0056ffc68635d79b6044ac845e660f46))
+* **cli:** Implement `InitProject` view and integrate into CLI app ([bf2b266](https://github.com/kamilguszpit/valuerail/commit/bf2b26663feb8b21dd3eff59e806738b5b3434ab))
+* **cli:** Integrate ink-text-input for interactive prompts ([b556a05](https://github.com/kamilguszpit/valuerail/commit/b556a05efbd54dc1c1c53f83d53dc9e7fbb6e79b))
+
 ## [1.1.0-beta.1](https://github.com/kamilguszpit/valuerail/compare/v1.0.0...v1.1.0-beta.1) (2026-02-07)
 
 ### Features
