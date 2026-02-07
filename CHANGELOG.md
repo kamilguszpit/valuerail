@@ -1,3 +1,10 @@
+# [1.0.0-beta.4](https://github.com/kamilguszpit/valuerail/compare/v1.0.0-beta.3...v1.0.0-beta.4) (2026-02-07)
+
+
+### Bug Fixes
+
+* bundle deps, copy fonts, and inject version to resolve runtime issues ([33ad6d4](https://github.com/kamilguszpit/valuerail/commit/33ad6d4ba052f9e1db583c244e9f2b54f6752d7a))
+
 # [1.0.0-beta.3](https://github.com/kamilguszpit/valuerail/compare/v1.0.0-beta.2...v1.0.0-beta.3) (2026-02-07)
 
 
