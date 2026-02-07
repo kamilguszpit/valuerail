@@ -1,3 +1,9 @@
+## [1.0.0-beta.8](https://github.com/kamilguszpit/valuerail/compare/v1.0.0-beta.7...v1.0.0-beta.8) (2026-02-07)
+
+### Bug Fixes
+
+* enable semantic-release for all commit types and fix version injection in CLI build ([da09733](https://github.com/kamilguszpit/valuerail/commit/da0973390d83cff1d8367b9edf5aec8e51b85dd3))
+
 # [1.0.0-beta.7](https://github.com/kamilguszpit/valuerail/compare/v1.0.0-beta.6...v1.0.0-beta.7) (2026-02-07)
 
 
