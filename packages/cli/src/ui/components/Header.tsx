@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Box, Text, useInput, useApp } from 'ink';
 
-type View = 'dashboard' | 'npm' | 'repo' | 'author';
+type View = 'dashboard' | 'npm' | 'repo' | 'author' | 'license';
 
 interface HeaderProps {
     currentView: View;
@@ -13,6 +13,7 @@ const TABS: { id: View; label: string; url?: string }[] = [
     { id: 'dashboard', label: 'Dashboard' },
     { id: 'npm', label: 'NPM', url: 'https://www.npmjs.com/package/valuerail' },
     { id: 'repo', label: 'Repo', url: 'https://github.com/kamilguszpit/valuerail' },
+    { id: 'license', label: 'License' },
     { id: 'author', label: 'Author' },
 ];
 

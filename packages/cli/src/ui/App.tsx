@@ -6,8 +6,9 @@ import Author from './views/Author.js';
 import ExternalLink from './views/ExternalLink.js';
 import Dashboard from './views/Dashboard.js';
 import ExitConfirmation from './views/ExitConfirmation.js';
+import License from './views/License.js';
 
-export type View = 'dashboard' | 'npm' | 'repo' | 'author' | 'exit-confirm';
+export type View = 'dashboard' | 'npm' | 'repo' | 'author' | 'license' | 'exit-confirm';
 
 export default function App() {
     const [currentView, setCurrentView] = useState<View>('dashboard');
@@ -85,6 +86,13 @@ export default function App() {
                         label="GitHub Repository"
                         url="https://github.com/kamilguszpit/valuerail"
                         onBack={goToHeader}
+                    />
+                )}
+
+                {currentView === 'license' && (
+                    <License
+                        onBack={goToHeader}
+                        isFocused={focusArea === 'content'}
                     />
                 )}
 
