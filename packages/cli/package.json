@@ -21,7 +21,6 @@
     },
     "dependencies": {
         "@types/open": "^6.2.1",
-        "@valuerail/core": "workspace:*",
         "ink": "^5.0.0",
         "ink-big-text": "^2.0.0",
         "ink-gradient": "^4.0.0",
@@ -32,6 +31,7 @@
         "zod": "^3.22.0"
     },
     "devDependencies": {
+        "@valuerail/core": "file:../core",
         "@types/react": "^18.2.0",
         "bun-types": "latest",
         "react-devtools-core": "^7.0.1",
