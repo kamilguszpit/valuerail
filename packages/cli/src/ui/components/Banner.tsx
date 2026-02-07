@@ -8,7 +8,7 @@ import path from 'path';
 
 const hasVrailConfig = () => {
     try {
-        return fs.existsSync(path.join(process.cwd(), 'vrail.config.ts'));
+        return fs.existsSync(path.join(process.cwd(), 'vrail.json'));
     } catch {
         return false;
     }

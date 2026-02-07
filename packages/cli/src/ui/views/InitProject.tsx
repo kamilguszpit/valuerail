@@ -27,33 +27,24 @@ export default function InitProject({ onComplete, onBack }: InitProjectProps) {
         let name = projectName.trim();
         if (!name) name = 'my-app';
 
-        let targetPath: string;
-        let resolvedProjectName: string;
-
-        if (name === '.') {
-            targetPath = process.cwd();
-            resolvedProjectName = path.basename(targetPath);
-        } else {
-            const sanitizedName = name.toLowerCase().replace(/[^a-z0-9-_]/g, '-');
-            targetPath = path.join(process.cwd(), sanitizedName);
-            resolvedProjectName = sanitizedName;
-        }
-
-        if (name !== '.' && fs.existsSync(targetPath)) {
-            setError(`Directory "${resolvedProjectName}" already exists`);
-            return;
-        }
-
-        setActualProjectName(resolvedProjectName);
-        setTargetDir(targetPath);
-        setStep('creating');
-
         try {
+            const result = resolveTargetPath(name);
+            setActualProjectName(result.resolvedProjectName);
+            setTargetDir(result.targetPath);
+
+            if (name !== '.' && fs.existsSync(result.targetPath)) {
+                setError(`Directory "${result.resolvedProjectName}" already exists`);
+                return;
+            }
+
+            setStep('creating');
+
             const __filename = fileURLToPath(import.meta.url);
             const __dirname = path.dirname(__filename);
             const templatePath = path.join(__dirname, '..', 'templates', 'nextjs');
 
-            await copyTemplate(templatePath, targetPath, resolvedProjectName);
+            await copyTemplate(templatePath, result.targetPath, result.resolvedProjectName);
+            createVrailJson(result.targetPath);
 
             setStep('selection');
         } catch (err) {
@@ -225,7 +216,34 @@ export default function InitProject({ onComplete, onBack }: InitProjectProps) {
     return null;
 }
 
-async function copyTemplate(src: string, dest: string, projectName: string): Promise<void> {
+
+export function resolveTargetPath(name: string) {
+    let targetPath: string;
+    let resolvedProjectName: string;
+
+    if (name === '.') {
+        targetPath = process.cwd();
+        resolvedProjectName = path.basename(targetPath);
+    } else {
+        const sanitizedName = name.toLowerCase().replace(/[^a-z0-9-_]/g, '-');
+        targetPath = path.join(process.cwd(), sanitizedName);
+        resolvedProjectName = sanitizedName;
+    }
+
+    return { targetPath, resolvedProjectName };
+}
+
+export function createVrailJson(targetPath: string) {
+    const configPath = path.join(targetPath, 'vrail.json');
+    if (!fs.existsSync(configPath)) {
+        fs.writeFileSync(configPath, JSON.stringify({
+            version: '1.0.0',
+            modules: []
+        }, null, 4));
+    }
+}
+
+export async function copyTemplate(src: string, dest: string, projectName: string): Promise<void> {
     if (!fs.existsSync(dest)) {
         fs.mkdirSync(dest, { recursive: true });
     }
