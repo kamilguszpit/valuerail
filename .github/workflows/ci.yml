@@ -61,7 +61,7 @@ jobs:
           bun-version: latest
 
       - name: Install dependencies
-        run: npm install
+        run: npm install --legacy-peer-deps
 
       - name: Build NPM Package
         run: cd packages/cli && bun run build:npm
