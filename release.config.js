@@ -33,7 +33,7 @@ module.exports = {
         [
             "@semantic-release/exec",
             {
-                "prepareCmd": "cd packages/cli && VERSION=${nextRelease.version} && bun build ./src/index.tsx --target=node --format=esm --outfile dist/index.js --define \"process.env.CLI_VERSION='\\\"${nextRelease.version}\\\"'\" && rm -rf fonts && cp -r ../../node_modules/cfonts/fonts ./fonts"
+                "prepareCmd": "cd packages/cli && bun build ./src/index.tsx --target=node --format=esm --outfile dist/index.js --define \"process.env.CLI_VERSION='\\\"${nextRelease.version}\\\"'\" && rm -rf fonts && cp -r $(find ../.. -path '*/cfonts/fonts' -type d 2>/dev/null | head -n 1) ./fonts"
             }
         ],
         [
