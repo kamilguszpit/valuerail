@@ -1,0 +1,13 @@
+{
+    "name": "vrail",
+    "version": "0.0.1",
+    "bin": {
+        "vrail": "./index.js"
+    },
+    "dependencies": {
+        "@valuerail/cli": "workspace:*"
+    },
+    "scripts": {
+        "test": "echo 'no tests'"
+    }
+}

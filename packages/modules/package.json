@@ -1,0 +1,8 @@
+{
+    "name": "@valuerail/modules",
+    "version": "0.0.1",
+    "main": "src/index.ts",
+    "scripts": {
+        "lint": "echo 'linting modules...'"
+    }
+}

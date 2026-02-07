@@ -1,0 +1,31 @@
+{
+    "name": "@valuerail/cli",
+    "version": "0.0.1",
+    "main": "src/index.tsx",
+    "bin": {
+        "vrail": "./src/index.tsx"
+    },
+    "scripts": {
+        "dev": "bun --watch run src/index.tsx",
+        "build": "bun build ./src/index.tsx --compile --outfile dist/vrail",
+        "lint": "echo 'linting...'"
+    },
+    "dependencies": {
+        "@types/open": "^6.2.1",
+        "@valuerail/core": "workspace:*",
+        "ink": "^5.0.0",
+        "ink-big-text": "^2.0.0",
+        "ink-gradient": "^4.0.0",
+        "ink-select-input": "^6.2.0",
+        "ink-spinner": "^5.0.0",
+        "open": "^11.0.0",
+        "react": "^18.2.0",
+        "zod": "^3.22.0"
+    },
+    "devDependencies": {
+        "@types/react": "^18.2.0",
+        "bun-types": "latest",
+        "react-devtools-core": "^7.0.1",
+        "typescript": "^5.0.0"
+    }
+}
