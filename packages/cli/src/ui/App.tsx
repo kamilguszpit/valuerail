@@ -10,8 +10,9 @@ import Dashboard from './views/Dashboard.js';
 import ExitConfirmation from './views/ExitConfirmation.js';
 import License from './views/License.js';
 import GoodbyeView from './views/GoodbyeView.js';
+import InitProject from './views/InitProject.js';
 
-export type View = 'dashboard' | 'npm' | 'repo' | 'author' | 'license' | 'exit-confirm' | 'goodbye';
+export type View = 'dashboard' | 'npm' | 'repo' | 'author' | 'license' | 'exit-confirm' | 'goodbye' | 'init';
 
 const hasVrailConfig = () => {
     try {
@@ -39,6 +40,7 @@ export default function App() {
     useInput((input, key) => {
         if (currentView === 'goodbye') return;
         if (currentView === 'exit-confirm') return;
+        if (currentView === 'init') return;
 
         if (key.escape) {
             if (focusArea === 'content') {
@@ -76,6 +78,9 @@ export default function App() {
                         onAction={(action) => {
                             if (action === 'exit') {
                                 setCurrentView('exit-confirm');
+                            } else if (action === 'init') {
+                                setCurrentView('init');
+                                setFocusArea('content');
                             }
                         }}
                     />
@@ -115,6 +120,15 @@ export default function App() {
                     <ExitConfirmation
                         onCancel={goToDashboard}
                         onExit={handleExit}
+                    />
+                )}
+
+                {currentView === 'init' && (
+                    <InitProject
+                        onComplete={(success) => {
+                            goToDashboard();
+                        }}
+                        onBack={goToDashboard}
                     />
                 )}
 

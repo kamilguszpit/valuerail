@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Box, Text, useInput, useApp } from 'ink';
 
-type View = 'dashboard' | 'npm' | 'repo' | 'author' | 'license';
+type View = 'dashboard' | 'npm' | 'repo' | 'author' | 'license' | 'init';
 
 interface HeaderProps {
     currentView: View;
