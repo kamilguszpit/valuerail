@@ -9,7 +9,8 @@
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "clean": "turbo run clean",
-    "test": "turbo run test"
+    "test": "turbo run test",
+    "cli:dev": "vdev-test"
   },
   "devDependencies": {
     "@semantic-release/changelog": "^6.0.3",
