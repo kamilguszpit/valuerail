@@ -1,6 +1,6 @@
 {
     "name": "@valuerail/cli",
-    "version": "1.0.0-beta.11",
+    "version": "1.0.0-beta.12",
     "author": "Kamil Guszpit",
     "license": "BUSL-1.1",
     "type": "module",
