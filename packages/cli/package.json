@@ -3,12 +3,20 @@
     "version": "0.0.1",
     "author": "Kamil Guszpit",
     "license": "BUSL-1.1",
+    "type": "module",
     "bin": {
-        "vrail": "./src/index.tsx"
+        "vrail": "./dist/index.js"
     },
+    "publishConfig": {
+        "access": "public"
+    },
+    "files": [
+        "dist"
+    ],
     "scripts": {
         "dev": "bun --watch run src/index.tsx",
         "build": "bun build ./src/index.tsx --compile --outfile dist/vrail",
+        "build:npm": "bun build ./src/index.tsx --target=node --format=esm --outfile dist/index.js",
         "lint": "echo 'linting...'"
     },
     "dependencies": {
