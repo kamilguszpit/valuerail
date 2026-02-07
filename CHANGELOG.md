@@ -1,3 +1,10 @@
+# [1.0.0-beta.3](https://github.com/kamilguszpit/valuerail/compare/v1.0.0-beta.2...v1.0.0-beta.3) (2026-02-07)
+
+
+### Bug Fixes
+
+* externalize cli dependencies to resolve missing font assets ([466f94a](https://github.com/kamilguszpit/valuerail/commit/466f94a8c19470d6704067ac0fbf904c488bad5f))
+
 # [1.0.0-beta.2](https://github.com/kamilguszpit/valuerail/compare/v1.0.0-beta.1...v1.0.0-beta.2) (2026-02-07)
 
 
