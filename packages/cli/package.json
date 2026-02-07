@@ -1,18 +1,29 @@
 {
     "name": "@valuerail/cli",
-    "version": "0.0.1",
-    "main": "src/index.tsx",
+    "version": "1.0.0-beta.11",
+    "author": "Kamil Guszpit",
+    "license": "BUSL-1.1",
+    "type": "module",
     "bin": {
-        "vrail": "./src/index.tsx"
+        "vrail": "./dist/index.js"
     },
+    "publishConfig": {
+        "access": "public"
+    },
+    "files": [
+        "dist",
+        "fonts"
+    ],
     "scripts": {
-        "dev": "bun --watch run src/index.tsx",
+        "dev": "CLI_VERSION=$(bun -e 'console.log(require(\"./package.json\").version)') bun --watch run src/index.tsx",
         "build": "bun build ./src/index.tsx --compile --outfile dist/vrail",
+        "start": "node ./dist/index.js",
+        "build:npm": "bun build ./src/index.tsx --target=node --format=esm --outfile dist/index.js --define process.env.CLI_VERSION='\"'$(cat package.json | grep '\"version\"' | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d ' ')'\"'",
+        "postbuild:npm": "rm -rf fonts && cp -r $(find ../../node_modules -path \"*/cfonts/fonts\" -type d | head -n 1) ./fonts",
         "lint": "echo 'linting...'"
     },
     "dependencies": {
         "@types/open": "^6.2.1",
-        "@valuerail/core": "workspace:*",
         "ink": "^5.0.0",
         "ink-big-text": "^2.0.0",
         "ink-gradient": "^4.0.0",
@@ -23,6 +34,7 @@
         "zod": "^3.22.0"
     },
     "devDependencies": {
+        "@valuerail/core": "file:../core",
         "@types/react": "^18.2.0",
         "bun-types": "latest",
         "react-devtools-core": "^7.0.1",

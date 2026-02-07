@@ -5,7 +5,7 @@
         "vrail": "./index.js"
     },
     "dependencies": {
-        "@valuerail/cli": "workspace:*"
+        "@valuerail/cli": "file:../cli"
     },
     "scripts": {
         "test": "echo 'no tests'"

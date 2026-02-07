@@ -1,21 +1,30 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Box, useInput, useApp } from 'ink';
+import fs from 'fs';
+import path from 'path';
 import Header from './components/Header.js';
 import Banner from './components/Banner.js';
 import Author from './views/Author.js';
 import ExternalLink from './views/ExternalLink.js';
 import Dashboard from './views/Dashboard.js';
 import ExitConfirmation from './views/ExitConfirmation.js';
+import License from './views/License.js';
+import GoodbyeView from './views/GoodbyeView.js';
 
-export type View = 'dashboard' | 'npm' | 'repo' | 'author' | 'exit-confirm';
+export type View = 'dashboard' | 'npm' | 'repo' | 'author' | 'license' | 'exit-confirm' | 'goodbye';
+
+const hasVrailConfig = () => {
+    try {
+        return fs.existsSync(path.join(process.cwd(), 'vrail.config.ts'));
+    } catch {
+        return false;
+    }
+};
 
 export default function App() {
+    const { exit } = useApp();
     const [currentView, setCurrentView] = useState<View>('dashboard');
     const [focusArea, setFocusArea] = useState<'header' | 'content'>('content');
-
-    useEffect(() => {
-        console.clear();
-    }, []);
 
     const goToHeader = () => setFocusArea('header');
     const goToDashboard = () => {
@@ -23,7 +32,12 @@ export default function App() {
         setFocusArea('header');
     };
 
+    const handleExit = () => {
+        setCurrentView('goodbye');
+    };
+
     useInput((input, key) => {
+        if (currentView === 'goodbye') return;
         if (currentView === 'exit-confirm') return;
 
         if (key.escape) {
@@ -42,16 +56,18 @@ export default function App() {
 
     return (
         <Box flexDirection="column" height="100%" padding={1}>
-            <Banner />
+            <Banner hideStatus={currentView === 'goodbye'} />
 
-            <Header
-                currentView={currentView === 'exit-confirm' ? 'dashboard' : currentView}
-                onViewChange={(view) => {
-                    setCurrentView(view);
-                    setFocusArea('content');
-                }}
-                isFocused={focusArea === 'header'}
-            />
+            {currentView !== 'goodbye' && (
+                <Header
+                    currentView={currentView === 'exit-confirm' ? 'dashboard' : currentView}
+                    onViewChange={(view) => {
+                        setCurrentView(view);
+                        setFocusArea('content');
+                    }}
+                    isFocused={focusArea === 'header'}
+                />
+            )}
 
             <Box marginTop={1} flexDirection="column">
                 {currentView === 'dashboard' && (
@@ -75,7 +91,7 @@ export default function App() {
                 {currentView === 'npm' && (
                     <ExternalLink
                         label="NPM Registry"
-                        url="https://www.npmjs.com/package/valuerail"
+                        url="https://www.npmjs.com/package/@valuerail/cli"
                         onBack={goToHeader}
                     />
                 )}
@@ -88,9 +104,25 @@ export default function App() {
                     />
                 )}
 
+                {currentView === 'license' && (
+                    <License
+                        onBack={goToHeader}
+                        isFocused={focusArea === 'content'}
+                    />
+                )}
+
                 {currentView === 'exit-confirm' && (
                     <ExitConfirmation
                         onCancel={goToDashboard}
+                        onExit={handleExit}
+                    />
+                )}
+
+                {currentView === 'goodbye' && (
+                    <GoodbyeView
+                        version={process.env.CLI_VERSION || 'v0.0.1'}
+                        cwd={process.cwd()}
+                        isVrailProject={hasVrailConfig()}
                     />
                 )}
             </Box>
