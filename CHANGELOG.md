@@ -1,3 +1,9 @@
+## [1.2.0-beta.3](https://github.com/kamilguszpit/valuerail/compare/v1.2.0-beta.2...v1.2.0-beta.3) (2026-02-08)
+
+### Features
+
+* Add custom Next.js `global-error`, `not-found`, and `error` pages and update `bun.lock` dependencies. ([25ae54e](https://github.com/kamilguszpit/valuerail/commit/25ae54ec8ed37db158967fa9a14ba5805490fbef))
+
 ## [1.2.0-beta.2](https://github.com/kamilguszpit/valuerail/compare/v1.2.0-beta.1...v1.2.0-beta.2) (2026-02-08)
 
 ## [1.1.1](https://github.com/kamilguszpit/valuerail/compare/v1.1.0...v1.1.1) (2026-02-07)
