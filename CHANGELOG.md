@@ -1,3 +1,9 @@
+## [1.2.0-beta.5](https://github.com/kamilguszpit/valuerail/compare/v1.2.0-beta.4...v1.2.0-beta.5) (2026-02-08)
+
+### Features
+
+* Introduce Geist fonts, dynamic metadata, and Open Graph image generation for Next.js templates. ([de4dbd4](https://github.com/kamilguszpit/valuerail/commit/de4dbd4cc30d34d1e7b68c4919d42a896ad2d561))
+
 ## [1.2.0-beta.4](https://github.com/kamilguszpit/valuerail/compare/v1.2.0-beta.3...v1.2.0-beta.4) (2026-02-08)
 
 ### Features
