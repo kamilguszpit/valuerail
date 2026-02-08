@@ -1,3 +1,9 @@
+## [1.2.0-beta.6](https://github.com/kamilguszpit/valuerail/compare/v1.2.0-beta.5...v1.2.0-beta.6) (2026-02-08)
+
+### Features
+
+* Integrate Bun into Next.js scripts and add Vercel configuration to support Bun. ([e313578](https://github.com/kamilguszpit/valuerail/commit/e3135785169b53238093de2a1493697d6562bf5b))
+
 ## [1.2.0-beta.5](https://github.com/kamilguszpit/valuerail/compare/v1.2.0-beta.4...v1.2.0-beta.5) (2026-02-08)
 
 ### Features
