@@ -1,3 +1,9 @@
+## [1.2.0-beta.4](https://github.com/kamilguszpit/valuerail/compare/v1.2.0-beta.3...v1.2.0-beta.4) (2026-02-08)
+
+### Features
+
+* Add Next.js template files for SEO configuration (robots, sitemap) and a loading component, driven by a new `vrail.config.ts`. ([2ca51e0](https://github.com/kamilguszpit/valuerail/commit/2ca51e09d245e9b34f26254114efe4e7bc524b61))
+
 ## [1.2.0-beta.3](https://github.com/kamilguszpit/valuerail/compare/v1.2.0-beta.2...v1.2.0-beta.3) (2026-02-08)
 
 ### Features
